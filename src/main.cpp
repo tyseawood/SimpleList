@@ -13,8 +13,9 @@ int main(int arg_count, char *args[])
         cout << "username not supplied...exiting the program" << endl;
     }
 
-    Database data;
-    data.write();
+        Database data;
+        data.write();
+        data.read();
 
     return 0;
 }
