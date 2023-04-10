@@ -1,6 +1,6 @@
 #include "include/database.h"
 
-void Database::write()
+void Database::write(vector<string> list)
 {
     //ofstream - output file stream; allows to write out to a file
   
@@ -8,7 +8,9 @@ void Database::write()
     db.open("db/lists.sl"); //open the database
     if( db.is_open() ) //is_open returns a bool value to indicate if the file is open or not.
     {
-        db << "1\n2\n3\n4\n5\n";
+        for(int list_index=0; list_index < (int)list.size(); list_index++){
+             db << list[list_index] << endl;
+        }
     } else 
     {
         cout << "Cannot open file for writing.\n";
